@@ -27,3 +27,7 @@ tar xzvf webbpsf-data-LATEST.tar.gz
 
 #Roman data to use is here:
 https://irsa.ipac.caltech.edu/data/theory/Roman/Wang2022a/products/configuration/
+
+#environment variable to always set
+export PYSYN_CDBS="${HOME}/pysyn_cdbs"
+export WEBBPSF_PATH="${HOME}/webbpsf-data"
