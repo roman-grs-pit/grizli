@@ -8,6 +8,8 @@
 conda create -n roman python=3.10
 conda activate roman
 
+#grizli install suggests python 3.9, this work for Greg
+
 #git clone and install grizli
 git clone https://github.com/roman-grs-pit/grizli.git
 cd grizli
@@ -16,7 +18,7 @@ mkdir CONF
 mkdir templates
 pip install ".[test]"
 
-#this was required for Kevin M.
+#this was required for Kevin M. to fix issue with pytest failing sonoma 14.6 M3
 pip install --force-reinstall numpy==1.26
 
 #this was required for Ashley (he was not previously running much of anything on his laptop!) needed before pip install ".[test]" and pytest worked:
