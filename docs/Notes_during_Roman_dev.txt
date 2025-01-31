@@ -37,7 +37,7 @@ tar xzvf synphot5.tar.gz
 pip install webbpsf
 export WEBBPSF_PATH="${HOME}/webbpsf-data" 
 mkdir $WEBBPSF_PATH 
-#download webpsf-data-LATEST.tar.gz and move it to ../$WEBBPSF_PATH 
+#download webpsf-data-LATEST.tar.gz and move it to ../$WEBBPSF_PATH ; basic wget on the link doesn't work because it actually some box address, some worry that this could change when we try to put it in automated install scripts
 cd ../$WEBBPSF_PATH
 tar xzvf webbpsf-data-LATEST.tar.gz
 
