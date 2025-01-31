@@ -1,14 +1,14 @@
 #Notes when setting up for Roman
 
 #Ashley needed to install wget on his computer 
-#Kevin M. used homebrew to install wget with ‘brew install wget’)
+#Kevin M. sonoma 14.6 M3 used homebrew to install wget with ‘brew install wget’)
 
 #One likely will want to use a new conda environment, e.g., Kevin M. used
 
 conda create -n roman python=3.10
 conda activate roman
 
-#grizli install suggests python 3.9, this work for Greg
+#grizli install suggests python 3.9, this works for Greg
 
 #git clone and install grizli
 git clone https://github.com/roman-grs-pit/grizli.git
@@ -18,18 +18,19 @@ mkdir CONF
 mkdir templates
 pip install ".[test]"
 
-#this was required for Kevin M. to fix issue with pytest failing sonoma 14.6 M3
+#pytest never work for Kevin M. , but that didn't actually seem to matter for running anything 
+#numpy version was then incompatible with astropy and this was needed
 pip install --force-reinstall numpy==1.26
 
 #this was required for Ashley (he was not previously running much of anything on his laptop!) needed before pip install ".[test]" and pytest worked:
 conda install hdf5
 conda install setuptools
 
-#following Keith's notebook
+#following Keith's notebook, not actually needed
 conda install pysynphot
 export PYSYN_CDBS="${HOME}/pysyn_cdbs"
 mkdir $PYSYN_CDBS
-wget http://ssb.stsci.edu/trds/tarfiles/synphot5.tar.gz -O $PYSYN_CDBS/grid/phoenix/synphot5.tar.gz #this is a large file that takes a long time to download, ~30 minutes
+wget http://ssb.stsci.edu/trds/tarfiles/synphot5.tar.gz -O $PYSYN_CDBS/grid/phoenix/synphot5.tar.gz #this is a large file that takes a long time to download, ~30 minutes; might not be actually be needed for basic applications
 cd $PYSYN_CDBS
 tar xzvf synphot5.tar.gz
 
